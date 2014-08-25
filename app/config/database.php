@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'dev.cajnhgr1dlih.us-west-2.rds.amazonaws.com',
-			'database'  => 'aprile-dev',
-			'username'  => 'root',
-			'password'  => '43m0nk33',
+			'host'      => getenv('DB_HOST'),
+			'database'  => getenv('DB_DATABASE'),
+			'username'  => getenv('DB_USERNAME'),
+			'password'  => getenv('DB_PASSWORD'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
