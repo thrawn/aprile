@@ -15,15 +15,15 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function showHome()
 	{
-		return View::make('hello');
+		return View::make('i');
 	}
 
     public function showLogin()
     {
         // show the form
-        return View::make('login');
+        return View::make('l');
     }
 
     public function doLogin()
@@ -57,7 +57,8 @@ class HomeController extends BaseController {
                 // redirect them to the secure section or whatever
                 // return Redirect::to('secure');
                 // for now we'll just echo success (even though echoing in a controller is bad)
-                echo 'SUCCESS!';
+                // Redirect to homepage
+                return Redirect::to('')->with('success', 'You have logged in successfully');
 
             } else {        
 
