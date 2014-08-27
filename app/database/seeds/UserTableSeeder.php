@@ -14,6 +14,24 @@ class UserTableSeeder extends Seeder
             'email'    => 'mike.hoover@gmail.com',
             'password' => Hash::make('43m0nk33'),
         ));
+        User::create(array(
+            'name'     => 'Penelope Bandiera',
+            'username' => 'penelope',
+            'email'    => 'p.bandiera@aprileusa.com',
+            'password' => Hash::make('penelope77'),
+        ));
+        User::create(array(                                                                                                                                
+            'name'     => 'Alessia Buset',                                                                                                             
+            'username' => 'alessia',                                                                                                                      
+            'email'    => 'a.buset@aprileusa.com',                                                                                                      
+            'password' => Hash::make('Scorpio1976'),                                                                                                        
+        ));
+        User::create(array(                                                                                                                                
+            'name'     => 'Tirzo Quintero',                                                                                                             
+            'username' => 'tirzo',                                                                                                                      
+            'email'    => 't.quintero@aprileusa.com',                                                                                                      
+            'password' => Hash::make('quintero2014'),                                                                                                        
+        ));
     }
 
 }

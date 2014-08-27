@@ -27,7 +27,7 @@
 
         <div class="container" role="main">
 
-            <div class="jumbotron">
+           <!-- <div class="jumbotron">-->
 
 
             <!-- Success-Messages -->                                                                                                                     
@@ -39,7 +39,7 @@
                 </div>                                                                                                                                    
             @endif  
 
-            @yield('content')
+
 
 
         <!-- Scripts are placed here -->

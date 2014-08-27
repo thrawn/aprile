@@ -1,0 +1,58 @@
+  290  artisan
+  291  php artisan
+  293  php artisan -v
+  294  php artisan -V
+  295  php artisan env
+  315  php artisan migrate:make create_users_table --create=users
+  320  php artisan migrate
+  321  php artisan migrate:rollback
+  322  php artisan migrate
+  323  artisan
+  324  php artisan 
+  325  php artisan migrate --no-interactions
+  326  php artisan -n migrate
+  332  php ~/laravel/artisan 
+  333  php ~/laravel/artisan db:seed
+  536  history | grep artisan
+  538  php artisan migrate:make create_trucker_table --create=trucker
+  539  php artisan migrate:make create_quote_table --create=quote
+  542  php artisan migration -n
+  543  php artisan migrate -n
+  618  php artisan migrate:refresh --seed
+  802  history | grep artisan
+  803  php artisan migrate:refresh --seed
+  805  history | grep artisan
+  806  php artisan migrate:create_quotes_table --create=quotes
+  808  php artisan migrate:reset
+  810  php artisan migrate:reset
+  817  php artisan migrate:refresh --seed
+  819  php artisan migrate:reset
+  827  php artisan migration:rollback
+  828  php artisan migrate:rollback
+  829  php artisan migrate:reset
+  838  php artisan migrate:reset
+  848  php artisan migrate:reset
+  854  php artisan migrate:reset
+  855  php artisan migrate
+  857  php artisan migrate:make create_vendors_table --create=vendors
+  858  php artisan migrate:make create_quotes_table --create=quotes
+  884  php artisan migrate:refresh --seed
+  903  php artisan routes
+ 1018  php artisan controller:make QuotesController
+ 1020  php artisan controller:make QuotesController
+ 1053  php artisan list
+ 1064  php artisan db:seed --class=QuotesTableSeeder
+ 1066  php artisan db:seed --class=QuotesTableSeeder
+ 1068  php artisan db:seed --class=QuotesTableSeeder
+ 1070  php artisan db:seed --class=QuotesTableSeeder --force
+ 1072  php artisan db:seed --class=QuotesTableSeeder --force
+ 1075  php artisan db:seed --class=QuotesTableSeeder
+ 1082  php artisan db:seed --class=QuotesTableSeeder
+ 1094  php artisan tinker
+ 1096  php artisan db:seed
+ 1127  php artisan cache:clear
+ 1140  php artisan list
+ 1207* php artisan migration:make
+ 1209  php artisan migrate:make create_vendor_types --create=vendor_types
+ 1246  history | grep artisan
+ 1247  history | grep artisan > command_history.txt

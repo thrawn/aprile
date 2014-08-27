@@ -24,8 +24,8 @@ class CreateVendorsTable extends Migration {
             $table->string('contact_alternate_phone',50);                                                                                                                                                     
             $table->string('contact_email',100);                                                                                                                                                              
             $table->text('note');                                                                                                                                                                             
-            $table->string('vendor_type',50);                                                                                                                                                                 
             $table->string('vendor_id',20);                                                                                                                                                                   
+            $table->enum('vendor_type', array('air','ocean','rail','truck'));
 			$table->timestamps();
 		});
 	}

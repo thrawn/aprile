@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">AprileUSA</a>
+    <a class="navbar-brand" href="/">AprileUSA</a>
   </div>
 
     <ul class="nav navbar-nav">                                                                                                                   
@@ -16,7 +16,7 @@
         <ul class="dropdown-menu">                                                                                                                
 <!--          <li class="divider"></li>-->
 <!--          <li class="dropdown-header">Applications</li>-->
-          <li><a href="#">Quotes</a></li>                                                                                                 
+          <li><a href="quotes">Quotes</a></li>                                                                                                 
           <li><a href="#">Rates</a></li>                                                                                        
           <li><a href="#">Shipments</a></li>
         </ul>                                                                                                                                     
