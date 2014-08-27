@@ -48,10 +48,77 @@
 </div>
 </div>
 
-@include('quotes.list')
+<div class="row">
+<div class="col-lg-4">
+<div class="bs-component">
+<div class="container-fluid">
+<table class="table-condensed table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Vendor ID</td>
+            <td>Origin></td>
+            <td>Destination</td>
+            <td>Buy</td>
+            <td>Sell</td>
+            <td>Cargo</td>
+            <td>Note</td>
+            <td>Parent ID</td>
+            <td>Quote ID</td>
+            <td>Created</td>
+            <td>Updated</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach($quotes as $key => $value)
+        <tr>
+            <td>{{ $value->id }}</td>
+            <td>{{ $value->vendor_id }}</td>
+            <td>{{ $value->origin }}</td>
+            <td>{{ $value->destination }}</td>
+           <td>{{ $value->buy }}</td>
+           <td>{{ $value->sell }}</td>
+           <td>{{ $value->cargo }}</td>
+           <td>{{ $value->note }}</td> 
+           <td>{{ $value->parent_id }}</td> 
+           <td>{{ $value->quote_id }}</td> 
+           <td>{{ $value->created_at }}</td> 
+           <td>{{ $value->updated_at }}</td> 
+
+
+            <!-- we will also add show, edit, and delete buttons -->
+            <td>
+
+                <!-- delete the quote (uses the destroy method DESTROY /quotes/{id} -->
+                <!-- we will add this later since its a little more complicated than the other two buttons -->
+
+                <!-- show the quote (uses the show method found at GET /quotes/{id} -->
+                <a class="btn btn-xs btn-success" href="{{ URL::to('quotes/' . $value->id) }}">Show this Quote</a>
+                
+
+                <!-- edit this quote (uses the edit method found at GET /quotes/{id}/edit -->
+                <a class="btn btn-xs btn-info" href="{{ URL::to('quotes/' . $value->id . '/edit') }}">Edit this Quote</a>
+
+            </td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
 
             
-</div>
+
 
         <!-- Scripts are placed here -->
         {{ HTML::script('bootstrap/js/jquery-2.1.1.min.js') }}

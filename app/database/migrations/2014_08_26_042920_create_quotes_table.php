@@ -23,7 +23,7 @@ class CreateQuotesTable extends Migration {
             $table->text('cargo');                                                                                                                                                                            
             $table->text('note');                                                                                                                                                                             
             $table->bigInteger('parent_id');                                                                                                                                                                  
-            $table->string('quote_id',20);  
+            $table->string('quote_id',25);  
 			$table->timestamps();
 		});
 	}

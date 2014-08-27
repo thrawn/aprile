@@ -8,7 +8,14 @@
 
 
 <!-- if there are creation errors, they will show here -->
-{{ HTML::ul($errors->all()) }} 
+
+@if ( HTML::ul($errors))
+<div class="alert alert-dismissable alert-danger">                                                                                                        <button type="button" class="close" data-dismiss="alert">×</button>                                                                                   
+{{ HTML::ul($errors->all()) }}                                                                                                                          
+</div> 
+@endif
+
+
         <div class="row">
           <div class="col-lg-12">
             <div class="well bs-component">

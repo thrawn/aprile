@@ -23,7 +23,10 @@
 <h1>Create a Quote</h1>
 
 <!-- if there are creation errors, they will show here -->
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert">×</button>
 {{ HTML::ul($errors->all()) }} 
+</div>
 
 {{ Form::open(array('route' => 'quotes.store')) }}
 

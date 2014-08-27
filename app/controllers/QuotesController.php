@@ -12,7 +12,7 @@ class QuotesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$quotes = Quotes::all();
+		$quotes = Quotes::orderBy('id', 'DESC')->get();
         return View::make('quotes.index')->with('quotes', $quotes);
 	}
 

@@ -16,7 +16,7 @@
         <ul class="dropdown-menu">                                                                                                                
 <!--          <li class="divider"></li>-->
 <!--          <li class="dropdown-header">Applications</li>-->
-          <li><a href="quotes">Quotes</a></li>                                                                                                 
+          <li><a href="/quotes">Quotes</a></li>                                                                                                 
           <li><a href="#">Rates</a></li>                                                                                        
           <li><a href="#">Shipments</a></li>
         </ul>                                                                                                                                     
