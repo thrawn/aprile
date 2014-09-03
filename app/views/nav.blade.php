@@ -19,6 +19,7 @@
           <li><a href="/quotes">Quotes</a></li>                                                                                                 
           <li><a href="#">Rates</a></li>                                                                                        
           <li><a href="#">Shipments</a></li>
+          <li><a href="/vendors">Vendors</a></li>
         </ul>                                                                                                                                     
       </li>                                                                                                                                       
     </ul> 
