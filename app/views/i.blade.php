@@ -17,7 +17,7 @@
         <!-- CSS are placed here -->
         {{ HTML::style('bootstrap/css/bootstrap.css') }}
         {{ HTML::style('bootstrap/css/bootstrap-theme.css') }}
-        {{ HTML::style('bootstrap/css/jumbotron-narrow.css') }} 
+        {{ HTML::style('bootstrap/css/jumbotron-narrow.css') }}
 </head>
 
 
@@ -30,14 +30,14 @@
            <!-- <div class="jumbotron">-->
 
 
-            <!-- Success-Messages -->                                                                                                                     
-            @if ($message = Session::get('success'))                                                                                                      
-                <div class="alert alert-success alert-block">                                                                                             
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>                                                             
-                    <h4>Success</h4>                                                                                                                      
-                    {{{ $message }}}                                                                                                                      
-                </div>                                                                                                                                    
-            @endif  
+            <!-- Success-Messages -->
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h4>Success</h4>
+                    {{{ $message }}}
+                </div>
+            @endif
 
 
 

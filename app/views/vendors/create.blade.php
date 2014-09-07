@@ -25,7 +25,7 @@
     <style>
       .carousel { z-index: -99; }
       .carousel .item {
-        position: fixed; 
+        position: fixed;
         width: 100%; height: 100%;
         -webkit-transition: opacity 2s;
         -moz-transition: opacity 2s;
@@ -77,7 +77,7 @@
 
 <div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</                                                            button>
 {{ HTML::ul($errors->all()) }}
-</div> 
+</div>
 @endif
 
 
@@ -100,38 +100,38 @@
         {{ Form::textarea('address', Input::old('address'), array('class' => 'form-control')) }}
     </div>
 
-    <div class="form-group">                                                                                                                                                         
-        {{ Form::label('city', 'City') }}                                                                                                                              
-        {{ Form::text('city', Input::old('city'), array('class' => 'form-control')) }}                                                                          
+    <div class="form-group">
+        {{ Form::label('city', 'City') }}
+        {{ Form::text('city', Input::old('city'), array('class' => 'form-control')) }}
     </div>
 
-    <div class="form-group">                                                                                                                                                         
-        {{ Form::label('state', 'State') }}                                                                                                                              
-        {{ Form::text('state', Input::old('state'), array('class' => 'form-control')) }}                                                                          
-    </div> 
+    <div class="form-group">
+        {{ Form::label('state', 'State') }}
+        {{ Form::text('state', Input::old('state'), array('class' => 'form-control')) }}
+    </div>
 
-    <div class="form-                                                                                                                                                     group">                                                                                                                                                         
-        {{ Form::label('zip', 'Zipcode') }}                                                                                                                              
-        {{ Form::text('zip', Input::old('zip'), array('class' => 'form-control')) }}                                                                          
-    </div> 
+    <div class="form-                                                                                                                                                     group">
+        {{ Form::label('zip', 'Zipcode') }}
+        {{ Form::text('zip', Input::old('zip'), array('class' => 'form-control')) }}
+    </div>
 
-    <div class="form-group">                                                                                                                                                         
-        {{ Form::label('contact_phone', 'Contact Phone') }}                                                                                                                              
-        {{ Form::textarea('contact_phone', Input::old('contact_phone'), array('class' => 'form-control')) }}                                                                          
-    </div> 
+    <div class="form-group">
+        {{ Form::label('contact_phone', 'Contact Phone') }}
+        {{ Form::textarea('contact_phone', Input::old('contact_phone'), array('class' => 'form-control')) }}
+    </div>
 
-    <div class="form-                                                                                                                                                     group">                                                                                                                                                         
-        {{ Form::label('contact_email', 'Email') }}                                                                                                                              
-        {{ Form::text('contact_email', Input::old('contact_email'), array('class' => 'form-control')) }}                                                                          
-    </div> 
+    <div class="form-                                                                                                                                                     group">
+        {{ Form::label('contact_email', 'Email') }}
+        {{ Form::text('contact_email', Input::old('contact_email'), array('class' => 'form-control')) }}
+    </div>
 
 
 
-    <div class="form-group">                                                                                                                                                         
-        {{ Form::label('note', 'Notes') }}                                                                                                                              
-        {{ Form::textarea('note', Input::old('note'), array('class' => 'form-control')) }}                                                                          
-    </div> 
-<input class="form-control" name="quote_id" type="hidden" value="{{ $quote_id }}"> 
+    <div class="form-group">
+        {{ Form::label('note', 'Notes') }}
+        {{ Form::textarea('note', Input::old('note'), array('class' => 'form-control')) }}
+    </div>
+<input class="form-control" name="quote_id" type="hidden" value="{{ $quote_id }}">
 
                   <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">

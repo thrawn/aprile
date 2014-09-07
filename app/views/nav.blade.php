@@ -10,19 +10,20 @@
     <a class="navbar-brand" href="/">AprileUSA</a>
   </div>
 
-    <ul class="nav navbar-nav">                                                                                                                   
-      <li class="dropdown">                                                                                                                       
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Applications <b class="caret"></b></a>                                             
-        <ul class="dropdown-menu">                                                                                                                
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Applications <b class="caret"></b></a>
+        <ul class="dropdown-menu">
 <!--          <li class="divider"></li>-->
 <!--          <li class="dropdown-header">Applications</li>-->
-          <li><a href="/quotes">Quotes</a></li>                                                                                                 
-          <li><a href="#">Rates</a></li>                                                                                        
+          <li><a href="#">Customers</a></li>
+          <li><a href="/quotes">Quotes</a></li>
+          <li><a href="#">Rates</a></li>
           <li><a href="#">Shipments</a></li>
           <li><a href="/vendors">Vendors</a></li>
-        </ul>                                                                                                                                     
-      </li>                                                                                                                                       
-    </ul> 
+        </ul>
+      </li>
+    </ul>
 
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <form class="navbar-form navbar-left">
