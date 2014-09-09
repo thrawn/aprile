@@ -25,11 +25,6 @@ class QuotesController extends \BaseController {
 	public function create()
 	{
 
-        // generate quote id
-        // QAPRUS-DATE-TIME
-        $now = Carbon::now();
-        $quote_id = 'Q-APRUS-' . $now->format('Ymd-hms');
-
 		return View::make('quotes.cf')->with('quote_id', $quote_id );
 	}
 
@@ -42,24 +37,25 @@ class QuotesController extends \BaseController {
 	public function store()
 	{
 	        $rules = array(
-            'vendor_id'   => 'required',
+            'vendor_id'   => 'required|min:3|max:3', //|unique:vendors,vendor_id',
             'origin'      => 'required',
             'destination' => 'required',
-            'buy'         => 'required',
-            'sell'        => 'required',
+            'buy'         => 'required|numeric',
+            'sell'        => 'required|numeric',
             'cargo'       => 'required'
-        );	
+        );
 
 
         $validator = Validator::make(Input::all(), $rules);
 
-        // process the login
+
         if ($validator->fails()) {
             return Redirect::to('quotes/create')
-                ->withErrors($validator);
-                //->withInput(Input::except('password'));
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
         } else {
             // store
+
             $quote = new Quotes;
             $quote->vendor_id   = Input::get('vendor_id');
             $quote->origin      = Input::get('origin');
@@ -68,7 +64,12 @@ class QuotesController extends \BaseController {
             $quote->sell        = Input::get('sell');
             $quote->cargo       = Input::get('cargo');
             $quote->note        = Input::get('note');
-            $quote->quote_id    = Input::get('quote_id');
+            // generate quote id
+            // QAPRUS-DATE-TIME
+            $now = Carbon::now();
+            $quote->quote_id = 'Q-' . strtoupper(trim($quote->vendor_id)) . '-' . $now->format('Ymd-hms');
+
+            //$quote->quote_id    = Input::get('quote_id');
             $quote->save();
 
             // redirect
@@ -86,7 +87,12 @@ class QuotesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+
+		$quote = Quotes::find($id);
+
+
+		return View::make('quotes.show')
+			->with('quote', $quote);
 	}
 
 

@@ -36,4 +36,5 @@ Route::group(array('before' => 'auth'), function()
     Route::get('', 'HomeController@showHome');
     Route::resource('quotes','QuotesController');
     Route::resource('vendors','VendorsController');
+    Route::get('zipcode', array('uses' => 'ZipcodeController@search'));
 });

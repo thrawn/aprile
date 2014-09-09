@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,8 +17,8 @@
 
         <!-- CSS are placed here -->
         {{ HTML::style('bootstrap/css/bootstrap.min.orig.css') }}
-        <!--{{ HTML::style('bootstrap/css/bootstrap-theme.css') }}-->
-     <!--   {{ HTML::style('bootstrap/css/jumbotron-narrow.css') }} -->
+       {{ HTML::style('bootstrap/css/bootstrap-theme.css') }}
+     {{ HTML::style('bootstrap/css/jumbotron-narrow.css') }}
 </head>
 
 
@@ -43,12 +44,12 @@
 <div class="row">
 <div class="col-lg-12">
 <div class="page-header">
-<h2>Quotes</h2>
+<!--<h2>Quote</h2>-->
 </div>
 </div>
 </div>
 
-@include('quotes.list')
+@include('quotes.s')
 
 
 </div>
@@ -61,3 +62,5 @@
 
 </body>
 </html>
+
+
