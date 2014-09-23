@@ -13,7 +13,13 @@ class QuotesController extends \BaseController {
 	public function index()
 	{
 		$quotes = Quotes::orderBy('id', 'DESC')->get();
-        return View::make('quotes.index')->with('quotes', $quotes);
+                return View::make('quotes.default.index')->with('quotes', $quotes);
+	}
+
+        public function d()
+	{
+		$quotes = Quotes::orderBy('id', 'DESC')->get();
+                return View::make('quotes.d')->with('quotes', $quotes)->with('title','DEFAULT');
 	}
 
 
@@ -25,7 +31,7 @@ class QuotesController extends \BaseController {
 	public function create()
 	{
 
-		return View::make('quotes.cf')->with('quote_id', $quote_id );
+		return View::make('quotes.default.create')->with('quote_id', $quote_id );
 	}
 
 
@@ -91,7 +97,7 @@ class QuotesController extends \BaseController {
 		$quote = Quotes::find($id);
 
 
-		return View::make('quotes.show')
+		return View::make('quotes.default.show')
 			->with('quote', $quote);
 	}
 
@@ -104,7 +110,11 @@ class QuotesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$quote = Quotes::find($id);
+
+
+		return View::make('quotes.default.edit')
+			->with('quote', $quote);
 	}
 
 
@@ -116,7 +126,43 @@ class QuotesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+
+	     $rules = array(
+            'vendor_id'   => 'required|min:3|max:3', //|unique:vendors,vendor_id',
+            'origin'      => 'required',
+            'destination' => 'required',
+            'buy'         => 'required|numeric',
+            'sell'        => 'required|numeric',
+            'cargo'       => 'required'
+            );
+
+
+            $validator = Validator::make(Input::all(), $rules);
+
+
+        if ($validator->fails()) {
+            return Redirect::to('quotes/' . $id . '/edit')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+
+            $quote = Quotes::find($id);
+            $quote->vendor_id   = Input::get('vendor_id');
+            $quote->origin      = Input::get('origin');
+            $quote->destination = Input::get('destination');
+            $quote->buy         = Input::get('buy');
+            $quote->sell        = Input::get('sell');
+            $quote->cargo       = Input::get('cargo');
+            $quote->note        = Input::get('note');
+            $quote->save();
+
+            // redirect
+            Session::flash('message', 'Successfully created Quote');
+            return Redirect::to('quotes');
+        }
+
+
 	}
 
 
