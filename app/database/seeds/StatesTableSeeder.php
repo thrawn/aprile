@@ -58,3 +58,5 @@ public function run() {
                 array('name' => 'Wyoming', 'code' => 'WY')
     ));
 }
+
+}

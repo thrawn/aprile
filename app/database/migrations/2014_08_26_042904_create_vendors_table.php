@@ -20,13 +20,13 @@ class CreateVendorsTable extends Migration {
             $table->text('address');
             $table->string('city',100);
             $table->string('state',2);
-            $table->string('zipcode',15);
             $table->string('contact_phone',50);
             $table->string('contact_alternate_phone',50);
             $table->string('contact_email',100);
             $table->text('note');
             $table->string('vendor_id',20);
             $table->enum('vendor_type', array('air','ocean','rail','truck'));
+            $table->string('created_by',25);
             $table->softDeletes();
             $table->timestamps();
 		});

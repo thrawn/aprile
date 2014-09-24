@@ -17,7 +17,8 @@
   <tbody>
 @foreach($quotes as $key => $value)
     <tr>
-        <td>
+        <td nowrap>
+            <img src="{{ Identicon::getImageDataUri($value->vendor_id, 25) }}" alt="bar Identicon" />
 <a href="/quotes/{{ $value->id }}" class="btn btn-default" role="buttom">{{ $value->quote_id }}</a>
         </td>
       <td>{{ $value->vendor_id }}</td>

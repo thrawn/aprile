@@ -10,7 +10,7 @@ class VendorsController extends \BaseController {
 	public function index()
 	{
         $vendors = Vendors::orderBy('id', 'DESC')->get();
-        return View::make('vendors.index')->with('vendors', $vendors);
+        return View::make('vendors.default.index')->with('vendors', $vendors);
 	}
 
 
@@ -21,7 +21,7 @@ class VendorsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('vendors.create');
+		return View::make('vendors.default.create');
 	}
 
 
@@ -31,8 +31,43 @@ class VendorsController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
-		//
+        {
+
+	    $rules = array(
+            'vendor_id'   => 'required|min:3|max:3|unique:vendors,vendor_id',
+            'name'          => 'required',
+            'contact_name'  => 'required'
+            );
+
+
+        $validator = Validator::make(Input::all(), $rules);
+
+
+        if ($validator->fails()) {
+            return Redirect::to('vendors/create')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+
+            $vendor = new Vendors;
+            $vendor->name           = Input::get('name');
+            $vendor->vendor_id      = Input::get('vendor_id');
+            $vendor->contact_name   = Input::get('contact_name');
+            $vendor->address        = Input::get('address');
+            $vendor->city           = Input::get('city');
+            $vendor->state          = Input::get('state');
+            $vendor->zipcode        = Input::get('zipcode');
+            $vendor->contact_phone  = Input::get('contact_phone');
+            $vendor->contact_email  = Input::get('contact_email');
+            $vendor->note           = Input::get('note');
+
+            $vendor->save();
+
+            // redirect
+            Session::flash('message', 'Successfully created Quote');
+            return Redirect::to('vendors');
+            }
 	}
 
 
@@ -44,7 +79,11 @@ class VendorsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$vendor = Vendors::find($id);
+
+
+		return View::make('vendors.default.show')
+			->with('vendor', $vendor);
 	}
 
 

@@ -19,7 +19,8 @@ class QuotesTableSeeder extends Seeder
             'cargo' => 'pallets',
             'note' => '25 pallets',
             'parent_id' => '0',
-            'quote_id' => 'Q-APR-20140827-170800'
+            'quote_id' => 'Q-APR-20140827-170800',
+            'created_by' => 'michael'
         ));
 
         Quotes::create(array(
@@ -31,7 +32,8 @@ class QuotesTableSeeder extends Seeder
             'cargo' => 'donkeys',
             'note' => '20 donkeys',
             'parent_id' => '0',
-            'quote_id' => 'Q-DIL-20140827-171002'
+            'quote_id' => 'Q-DIL-20140827-171002',
+            'created_by' => 'michael'
         ));
 
          Quotes::create(array(
@@ -43,7 +45,8 @@ class QuotesTableSeeder extends Seeder
             'cargo' => 'fish',
             'note' => '53 foot trailer, 200 boxes of fish, 20,000 ilbs',
             'parent_id' => '0',
-            'quote_id' => 'Q-FRF-20140827-180823'
+            'quote_id' => 'Q-FRF-20140827-180823',
+             'created_by' => 'michael'
         ));
 
         Quotes::create(array(
@@ -55,7 +58,8 @@ class QuotesTableSeeder extends Seeder
             'cargo' => 'lumber',
             'note' => '50,000 lbs of redwood',
             'parent_id' => '0',
-            'quote_id' => 'Q-TFC-20140828-100800'
+            'quote_id' => 'Q-TFC-20140828-100800',
+            'created_by' => 'michael'
         ));
 
         Quotes::create(array(
@@ -72,7 +76,8 @@ class QuotesTableSeeder extends Seeder
 Offer for pick up at our depot in Sacramento up to Toronto whse',
             'note' => '',
             'parent_id' => '0',
-            'quote_id' => 'Q-JTS-20140828-102234'
+            'quote_id' => 'Q-JTS-20140828-102234',
+            'created_by' => 'penelope'
         ));
     }
 

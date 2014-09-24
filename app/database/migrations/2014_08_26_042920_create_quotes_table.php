@@ -24,6 +24,7 @@ class CreateQuotesTable extends Migration {
             $table->text('note');
             $table->bigInteger('parent_id');
             $table->string('quote_id',25);
+            $table->string('created_by',25);
             $table->softDeletes();
             $table->timestamps();
 		});

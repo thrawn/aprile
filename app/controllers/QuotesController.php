@@ -81,7 +81,7 @@ class QuotesController extends \BaseController {
             // redirect
             Session::flash('message', 'Successfully created Quote');
             return Redirect::to('quotes');
-        }
+            }
 	}
 
 

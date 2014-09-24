@@ -20,7 +20,8 @@ class VendorsTableSeeder extends Seeder
             'contact_email' => 'p.bandiera@aprileusa.com',
             'note' => 'Contact Penelope',
             'vendor_type' => 'ocean',
-            'vendor_id' => 'APR'
+            'vendor_id' => 'APR',
+            'created_by' => 'michael'
         ));
         Vendors::create(array(
             'name' => 'Diligent',
@@ -32,7 +33,8 @@ class VendorsTableSeeder extends Seeder
             'contact_email' => 'unknown',
             'note' => '',
             'vendor_type' => 'truck',
-            'vendor_id' => 'DIL'
+            'vendor_id' => 'DIL',
+            'created_by' => 'penelope'
         ));
 
         Vendors::create(array(
@@ -45,7 +47,8 @@ class VendorsTableSeeder extends Seeder
             'contact_email' => 'unknown',
             'note' => '',
             'vendor_type' => 'truck',
-            'vendor_id' => 'FRF'
+            'vendor_id' => 'FRF',
+            'created_by' => 'penelope'
         ));
 
                 Vendors::create(array(
@@ -58,7 +61,8 @@ class VendorsTableSeeder extends Seeder
             'contact_email' => 'unknown',
             'note' => '',
             'vendor_type' => 'truck',
-            'vendor_id' => 'TFC'
+            'vendor_id' => 'TFC',
+            'created_by' => 'penelope'
         ));
 
     }
