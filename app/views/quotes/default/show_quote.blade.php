@@ -28,45 +28,17 @@
                 </p>
                 <p>
                     <ul class="list-inline">
+                        <li><strong>Created by:</strong> {{ $quote->created_by }}</li>
                         <li><strong>Created:</strong> {{ $quote->created_at }}</li>
                         <li><strong>Updated:</strong> {{ $quote->updated_at }}</li>
                     </ul>
 
                 </p>
-                <button type="button" class="btn btn-xs"><a href="{{ URL::to('/quotes/') }}">Done</a></button>
-                <button type="button" class="btn btn-sm btn-default"><a href="{{ URL::to('/quotes/' . $quote->id . '/edit') }}">Edit</a></button>
-
 
                 <div class="btn-group">
-    <a class="btn btn-xs btn-success" href="#">Approve</a>
-    <a class="btn btn-xs btn-danger" href="#">Deny</a>
-</div>
-<br>
-<div class="btn-group">
-    <a class="btn btn-sm btn-success" href="#">Approve</a>
-    <a class="btn btn-sm btn-danger" href="#">Deny</a>
-</div>
-<br>
-<div class="btn-group">
-    <a class="btn btn-success" href="#">Approve</a>
-    <a class="btn btn-danger" href="#">Deny</a>
-</div>
-
-
-
-<div class="btn-group btn-small">
-    <button class="btn btn-xs btn-success" href="#" type="button">Approve</button>
-    <button class="btn btn-xs btn-danger" href="#" type="button">Deny</button>
-</div>
-<br>
-<div class="btn-group"> <a class="btn btn-sm btn-success" href="#">Approve</a>
-     <a class="btn btn-sm btn-danger" href="#">Deny</a>
-</div>
-<br>
-<div class="btn-group"> <a class="btn btn-success" href="#">Approve</a>
-    <a class="btn btn-danger" href="#">Deny</a>
-</div>
-
+                <a class="btn btn-success" href="{{ URL::to('/quotes/') }}">Done</a>
+                <a class="btn btn-danger" href="{{ URL::to('/quotes/' . $quote->id . '/edit') }}">Edit</a>
+                </div>
 	</div>
 
 

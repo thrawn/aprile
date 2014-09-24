@@ -16,12 +16,12 @@
 
     <div class="form-group">
         {{ Form::label('name', 'Vendor Name') }}
-        {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
+        {{ Form::text('name', Input::old('name'), array('class' => 'form-control','placeholder' => 'Vendor Name like "ABC Trucking"')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('vendor_id', 'Vendor ID') }}
-        {{ Form::text('vendor_id', Input::old('vendor_id'), array('class' => 'form-control')) }}
+        {{ Form::text('vendor_id', Input::old('vendor_id'), array('class' => 'form-control','placeholder' => '3 Letter Identifier like "ABC"')) }}
     </div>
 
     <div class="form-group">
@@ -56,7 +56,7 @@
 
     <div class="form-group">
         {{ Form::label('contact_phone', 'Contact Phone') }}
-        {{ Form::textarea('contact_phone', Input::old('contact_phone'), array('class' => 'form-control')) }}
+        {{ Form::text('contact_phone', Input::old('contact_phone'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group"                                                                                                                                                    group">

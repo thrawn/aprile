@@ -155,6 +155,7 @@ class QuotesController extends \BaseController {
             $quote->sell        = Input::get('sell');
             $quote->cargo       = Input::get('cargo');
             $quote->note        = Input::get('note');
+            $quote->created_by  = Auth::user()->username;
             $quote->save();
 
             // redirect

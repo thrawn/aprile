@@ -34,9 +34,11 @@ class VendorsController extends \BaseController {
         {
 
 	    $rules = array(
-            'vendor_id'   => 'required|min:3|max:3|unique:vendors,vendor_id',
-            'name'          => 'required',
-            'contact_name'  => 'required'
+            'vendor_id'     => 'required|min:3|max:3|unique:vendors,vendor_id',
+            'name'          =>  'required',
+            'vendor_type'   => 'required',
+            'contact_name'  => 'required',
+            'contact_phone'  => 'required'
             );
 
 
@@ -61,6 +63,7 @@ class VendorsController extends \BaseController {
             $vendor->contact_phone  = Input::get('contact_phone');
             $vendor->contact_email  = Input::get('contact_email');
             $vendor->note           = Input::get('note');
+            $vendor->created_by     = Auth::user()->username;
 
             $vendor->save();
 
@@ -95,7 +98,11 @@ class VendorsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$vendor = Vendors::find($id);
+
+
+		return View::make('vendors.default.edit')
+			->with('vendor', $vendor);
 	}
 
 
