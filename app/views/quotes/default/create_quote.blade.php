@@ -24,8 +24,8 @@
 <legend>{{ $quote_id }}</legend>
 
     <div class="form-group">
-        {{ Form::label('vendor_id', 'Vendor ID') }}
-        {{ Form::text('vendor_id', Input::old('vendor_id'), array('class' => 'form-control')) }}
+        {{ Form::label('vendor_id', 'Vendor') }}
+        {{ Form::select('vendor_id', $vendors , Input::old('vendor_id'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">

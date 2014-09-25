@@ -35,8 +35,19 @@
     </div>
 
     <div class="form-group">
+        {{ Form::label('contact_phone', 'Contact Phone') }}
+        {{ Form::text('contact_phone', Input::old('contact_phone'), array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group"                                                                                                                                                    group">
+        {{ Form::label('contact_email', 'Email') }}
+        {{ Form::text('contact_email', Input::old('contact_email'), array('class' => 'form-control')) }}
+    </div>
+
+
+    <div class="form-group">
         {{ Form::label('address', 'Address') }}
-        {{ Form::textarea('address', Input::old('address'), array('class' => 'form-control')) }}
+        {{ Form::text('address', Input::old('address'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
@@ -50,31 +61,18 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('zip', 'Zipcode') }}
-        {{ Form::text('zip', Input::old('zip'), array('class' => 'form-control')) }}
+        {{ Form::label('zipcode', 'Zipcode') }}
+        {{ Form::text('zipcode', Input::old('zipcode'), array('class' => 'form-control')) }}
     </div>
-
-    <div class="form-group">
-        {{ Form::label('contact_phone', 'Contact Phone') }}
-        {{ Form::text('contact_phone', Input::old('contact_phone'), array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group"                                                                                                                                                    group">
-        {{ Form::label('contact_email', 'Email') }}
-        {{ Form::text('contact_email', Input::old('contact_email'), array('class' => 'form-control')) }}
-    </div>
-
-
 
     <div class="form-group">
         {{ Form::label('note', 'Notes') }}
         {{ Form::textarea('note', Input::old('note'), array('class' => 'form-control')) }}
     </div>
 
-
                   <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                      <button class="btn btn-default">Cancel</button>
+                      {{ link_to(URL::previous(), 'Cancel', ['class' => 'btn btn-default']) }}
                       <button type="submit" class="btn btn-primary">Create Vendor</button>
                     </div>
                   </div>

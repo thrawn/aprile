@@ -17,9 +17,9 @@ class CreateVendorsTable extends Migration {
             $table->increments('id');
             $table->string('name',100);
             $table->string('contact_name',100);
-            $table->text('address')->default('no address');
-            $table->string('city',100)->default('no city');
-            $table->string('state',2)->default('no state');
+            $table->text('address');
+            $table->string('city',100)->default('New York');
+            $table->string('state',2)->default('NY');
             $table->string('zipcode',12)->default('00000');
             $table->string('contact_phone',50);
             $table->string('contact_alternate_phone',50)->default('');

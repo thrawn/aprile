@@ -12,8 +12,8 @@
 
 
         <div id="main" class="row">
-            <p>D E F A U L T</p>
-            
+          
+
             @yield('content')
 
 	</div>

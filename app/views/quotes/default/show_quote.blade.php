@@ -3,7 +3,7 @@
 
 	<!--<div class="jumbotron text-center">-->
         <div class="panel">
-
+            <img src="{{ Identicon::getImageDataUri($quote->vendor_id) }}" alt="bar Identicon" />
             <h4 class="text-left" style="margin: 15px">{{ $quote->quote_id }}</h4>
             <hr class="divider" role="presentation"></hr>
 		<p>

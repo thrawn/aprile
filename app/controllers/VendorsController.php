@@ -13,7 +13,6 @@ class VendorsController extends \BaseController {
         return View::make('vendors.default.index')->with('vendors', $vendors);
 	}
 
-
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -21,7 +20,8 @@ class VendorsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('vendors.default.create');
+                $vendors = Vendors::orderBy('name', 'ASC')->lists('name','vendor_id','id');
+		return View::make('vendors.default.create')->with('vendors', $vendors);
 	}
 
 

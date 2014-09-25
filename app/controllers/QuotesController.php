@@ -30,8 +30,15 @@ class QuotesController extends \BaseController {
 	 */
 	public function create()
 	{
-
-		return View::make('quotes.default.create')->with('quote_id', $quote_id );
+                $vendors = Vendors::orderBy('name', 'ASC')->lists('name','vendor_id','id','vendor_type');
+                //$v = Vendors::select('name','vendor_type')->groupBy('name')->orderBy('vendor_type')->get();
+                //print_r($vendors);
+                //print_r($v);
+                //foreach (Vendors::select('name','vendor_id','vendor_type')->orderBy('vendor_type','asc')->get() as $v)
+                //{
+                  //  $vendors[$v->vendor_type] = $v->name;
+                //}
+		return View::make('quotes.default.create')->with('quote_id', $quote_id )->with('vendors', $vendors);
 	}
 
 
@@ -70,6 +77,7 @@ class QuotesController extends \BaseController {
             $quote->sell        = Input::get('sell');
             $quote->cargo       = Input::get('cargo');
             $quote->note        = Input::get('note');
+            $quote->created_by = Auth::user()->username;
             // generate quote id
             // QAPRUS-DATE-TIME
             $now = Carbon::now();

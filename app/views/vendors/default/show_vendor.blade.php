@@ -28,6 +28,7 @@
                 </p>
                 <p>
                     <ul class="list-inline">
+                        <li><strong>Created by:</strong> {{ $vendor->created_by }}</li>
                         <li><strong>Created:</strong> {{ $vendor->created_at }}</li>
                         <li><strong>Updated:</strong> {{ $vendor->updated_at }}</li>
                     </ul>
