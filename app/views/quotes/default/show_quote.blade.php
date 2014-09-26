@@ -34,12 +34,30 @@
                     </ul>
 
                 </p>
+                <p>
+                <h4>Attached Files</h4>
+                    <ul>
+                    @foreach($quote_files as $key => $value)
+                    @if($value->filemime === 'pdf')
+                    <li><strong><a href="/js/ViewerJS/#/uploads/{{ $value->filename }}">{{ $value->filetype }}</a></strong></li>
+                    @else
+                    <li><strong><a href="/uploads/{{ $value->filename }}" data-lightbox="files" data-title="{{ $value->filetype }}">{{ $value->filetype }}</a></strong></li>
+                    @endif
+                    @endforeach
+                    </ul>
+                </p>
+                <p>
+                <h4>Attach a file</h4>
+                <form action="/quotes/upload" class="dropzone" id="quote-dropzone">
+                    {{ Form::hidden('quote', $quote->quote_id) }}
+                    {{ Form::hidden('id', $quote->id) }}
+                </form>
+                </p>
 
                 <div class="btn-group">
                 <a class="btn btn-success" href="{{ URL::to('/quotes/') }}">Done</a>
                 <a class="btn btn-danger" href="{{ URL::to('/quotes/' . $quote->id . '/edit') }}">Edit</a>
                 </div>
 	</div>
-
 
 

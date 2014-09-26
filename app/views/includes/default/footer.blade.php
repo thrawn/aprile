@@ -5,4 +5,6 @@
     <!--<script src="js/bootstrap.min.js"></script>-->
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="/js/dropzone.js"></script>
+    <script src="/js/lightbox/js/lightbox.min.js"></script>
 

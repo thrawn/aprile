@@ -3,6 +3,7 @@
 composer.phar
 composer.lock
 /app/storage/*
+/public/uploads/*
 .env.*.php
 .env.php
 .DS_Store

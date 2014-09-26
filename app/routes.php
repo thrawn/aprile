@@ -38,4 +38,5 @@ Route::group(array('before' => 'auth'), function()
     Route::resource('d','QuotesController@d');
     Route::resource('vendors','VendorsController');
     Route::get('zipcode', array('uses' => 'ZipcodeController@search'));
+    Route::post('quotes/upload', array('uses' => 'QuotesController@upload'));
 });

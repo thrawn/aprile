@@ -1,11 +1,3 @@
-      <div class="bs-docs-section">
-        <div class="row">
-          <div class="col-lg-12">
-          </div>
-        </div>
-
-
-
 
 <!-- if there are creation errors, they will show here -->
 
@@ -20,12 +12,15 @@
           <div class="col-lg-12">
             <div class="well bs-component">
 {{ Form::open(array('route' => 'quotes.store','class'=> 'form-horizontal')) }}
+{{ View::make('includes.default.vendors') }}
+
 <fieldset>
-<legend>{{ $quote_id }}</legend>
+<legend>Create Quote</legend>
 
     <div class="form-group">
         {{ Form::label('vendor_id', 'Vendor') }}
-        {{ Form::select('vendor_id', $vendors , Input::old('vendor_id'), array('class' => 'form-control')) }}
+        {{ Form::selectOpt(Vendors::all(), 'vendor_id', 'vendor_type', 'name', 'vendor_id') }}
+        {{-- Form::select('vendor_id', $vendors , Input::old('vendor_id'), array('class' => 'form-control')) --}}
     </div>
 
     <div class="form-group">

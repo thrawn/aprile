@@ -103,10 +103,12 @@ class QuotesController extends \BaseController {
 	{
 
 		$quote = Quotes::find($id);
+                $files = Files::where('belongs_to_id','=',$quote->quote_id)->get();
+
 
 
 		return View::make('quotes.default.show')
-			->with('quote', $quote);
+			->with('quote', $quote)->with('quote_files',$files);
 	}
 
 
@@ -172,6 +174,53 @@ class QuotesController extends \BaseController {
         }
 
 
+	}
+
+
+        public function upload(){
+
+		$input = Input::all();
+                $quote = Input::get('quote');
+                $id = Input::get('id');
+		$rules = array(
+		    'file' => 'max:3000000',
+		);
+
+		$validation = Validator::make($input, $rules);
+
+		if ($validation->fails())
+		{
+			return Response::make($validation->errors->first(), 400);
+		}
+
+                $file = Input::file('file');
+                $destinationPath  = public_path() . '/uploads/';// . sha1(time());
+                //print $destinationPath;
+                // If the uploads fail due to file system, you can try doing public_path().'/uploads'
+                //$filename = str_random(12);
+                $filename = $quote . '_' . $file->getClientOriginalName();
+                //$extension =$file->getClientOriginalExtension();
+                $upload_success = Input::file('file')->move($destinationPath, $filename);
+
+                if( $upload_success ) {
+
+                        $f = new Files();
+                        $og = $file->getClientOriginalName();
+                        $f->belongs_to_id   = $quote;
+                        $f->filename        = $filename;
+                        $f->filetype        = $og;
+                        $f->filemime        = strtolower($file->getClientOriginalExtension());//$file->getMimeType();
+                        $f->filesize        = $file->getSize();
+                        $f->filepath        = $destinationPath . $filename;
+                        $f->note            = "attaching $og to $quote";
+                        $f->created_by      = Auth::user()->username;
+
+                        $f->save();
+
+                   return Response::json('success', 200);
+                } else {
+                   return Response::json('error', 400);
+                }
 	}
 
 

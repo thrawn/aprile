@@ -18,10 +18,10 @@
 @foreach($quotes as $key => $value)
     <tr>
         <td nowrap>
-            <img src="{{ Identicon::getImageDataUri($value->vendor_id, 25) }}" alt="bar Identicon" />
+
 <a href="/quotes/{{ $value->id }}" class="btn btn-default" role="buttom">{{ $value->quote_id }}</a>
         </td>
-      <td>{{ $value->vendor_id }}</td>
+        <td nowrap><img src="{{ Identicon::getImageDataUri($value->vendor_id, 25) }}" alt="bar Identicon" /> <strong>{{ $value->vendor_id }}</strong></td>
       <td>{{ $value->origin }}</td>
       <td>{{ $value->destination }}</td>
       <td>{{ str_limit($value->cargo, $limit = 20, $end = ' ...') }}</td>
