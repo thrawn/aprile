@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="/bootstrap/css/dropzone.css">
     <!-- lightbox css -->
     <link rel="stylesheet" href="/js/lightbox/css/lightbox.css">
+    <!-- background css -->
+    <!--<link rel="stylesheet" href="/bootstrap/css/background.css">-->
+    <!-- background body css -->
+    <!--<link rel="stylesheet" href="/bootstrap/css/body.css">-->
 
   </head>
 

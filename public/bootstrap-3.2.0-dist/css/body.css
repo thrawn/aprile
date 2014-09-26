@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+
+    background: url('/bootstrap/img/Oakland-20140629-02752.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    color:#000;
+    background-color:#333;
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+
+}

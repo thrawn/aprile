@@ -1,7 +1,7 @@
 
 <a href="/vendors/create" class="btn btn-info">Create a Vendor</a>
 
-<table class="table table-striped table-hover ">
+<table class="table table-hover ">
   <thead>
     <tr>
       <th>Vendor ID</th>
@@ -25,7 +25,7 @@
       <td>{{ $value->contact_name }}</td>
 
       <td>{{ $value->contact_phone }}</td>
- 
+
       <td>{{ $value->contact_email }}</td>
       <td>{{ str_limit($value->note, $limit = 20, $end = ' ...') }}</td>
       <td>{{ $value->created_at }}</td>

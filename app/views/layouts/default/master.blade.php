@@ -4,6 +4,7 @@
     @include('includes.default.head')
 
   <body>
+
     <div class="container">
 
 	<header class="row">
@@ -12,7 +13,7 @@
 
 
         <div id="main" class="row">
-          
+
 
             @yield('content')
 
