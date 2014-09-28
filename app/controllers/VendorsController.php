@@ -114,7 +114,44 @@ class VendorsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+            $rules = array(
+            'name'          =>  'required',
+            'vendor_type'   => 'required',
+            'contact_name'  => 'required',
+            'contact_phone'  => 'required'
+            );
+
+
+        $validator = Validator::make(Input::all(), $rules);
+
+
+        if ($validator->fails()) {
+            return Redirect::to('vendors/' . $id . '/edit')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+
+            $vendor = Vendors::find($id);
+            $vendor->name           = Input::get('name');
+            $vendor->vendor_type    = Input::get('vendor_type');
+
+            $vendor->contact_name   = Input::get('contact_name');
+            $vendor->address        = Input::get('address');
+            $vendor->city           = Input::get('city');
+            $vendor->state          = Input::get('state');
+            $vendor->zipcode        = Input::get('zipcode');
+            $vendor->contact_phone  = Input::get('contact_phone');
+            $vendor->contact_email  = Input::get('contact_email');
+            $vendor->note           = Input::get('note');
+
+
+            $vendor->save();
+
+            // redirect
+            Session::flash('message', 'Successfully created Quote');
+            return Redirect::to('vendors');
+            }
 	}
 
 

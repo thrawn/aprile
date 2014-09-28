@@ -103,7 +103,7 @@ class QuotesController extends \BaseController {
 	{
 
 		$quote = Quotes::find($id);
-                $files = Files::where('belongs_to_id','=',$quote->quote_id)->get();
+                $files = Files::where('belongs_to_id','=',$quote->quote_id)->orderBy('filemime')->get();
 
 
 

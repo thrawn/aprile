@@ -17,10 +17,10 @@
 <!--          <li class="divider"></li>-->
 <!--          <li class="dropdown-header">Applications</li>-->
           <li><a href="#">Customers</a></li>
-          <li><a href="/quotes">Quotes</a></li>
+          <li><a href="/quotes"><strong>Quotes</strong></a></li>
           <li><a href="#">Rates</a></li>
           <li><a href="#">Shipments</a></li>
-          <li><a href="/vendors">Vendors</a></li>
+          <li><a href="/vendors"><strong>Vendors</strong></a></li>
         </ul>
       </li>
     </ul>

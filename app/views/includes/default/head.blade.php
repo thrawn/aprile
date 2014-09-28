@@ -25,6 +25,22 @@
     <link rel="stylesheet" href="/bootstrap/css/dropzone.css">
     <!-- lightbox css -->
     <link rel="stylesheet" href="/js/lightbox/css/lightbox.css">
+     <!-- nailthumb css -->
+    <link rel="stylesheet" href="/js/nailthumb/jquery.nailthumb.1.1.min.css">
+       <style type="text/css" media="screen">
+        .square-thumb {
+            width: 80px;
+            height: 80px;
+            margin: 2px;
+        }
+            .nailthumb-image-titles-bigger span.nailthumb-title {
+            background: none repeat scroll 0 0 rgba(0, 125, 0, 0.5);
+            font-size: 12px;
+            height: 30px;
+        }
+        </style>
+    <!-- font awesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- background css -->
     <!--<link rel="stylesheet" href="/bootstrap/css/background.css">-->
     <!-- background body css -->

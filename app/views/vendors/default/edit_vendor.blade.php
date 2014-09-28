@@ -11,8 +11,8 @@
                     <ul class="list-inline">
                         <li style ="font-size: 16px;">
                             <div class="form-group">
-                                {{ Form::label('vendor_id', 'Vendor') }}
-                                {{ Form::text('vendor_id', null, array('class' => 'form-control')) }}
+                                <strong>Vendor ID:</strong> {{ $vendor->vendor_id }}
+
                             </div>
                         </li>
                         <li style ="font-size: 16px;">
@@ -20,6 +20,12 @@
                                 {{ Form::label('name', 'Name') }}
                                 {{ Form::text('name', null, array('class' => 'form-control')) }}
                             </div>
+                        </li>
+                        <li style ="font-size: 16px;">
+                            <div class="form-group">
+        {{ Form::label('vendor_type', 'Vendor Type') }}
+        {{ Form::select('vendor_type', array('air' => 'Air', 'ocean' => 'Ocean', 'rail' => 'Rail', 'truck' => 'Truck')) }}
+    </div>
                         </li>
                         <li style ="font-size: 16px;">
                             <div class="form-group">
