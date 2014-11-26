@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    @include('includes.default.head')
+    @include('includes.material.head')
 
   <body>
 
@@ -20,7 +20,7 @@
 	</div>
 
 
-    @include('includes.default.footer')
+    @include('includes.material.footer')
 
   </body>
 </html>
