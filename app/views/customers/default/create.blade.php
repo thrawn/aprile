@@ -1,5 +1,5 @@
 @extends('layouts.default.master')
 @section('content')
-        @include('vendors.default.create_vendor')
+        @include('customers.default.create_customer')
 @stop
 
