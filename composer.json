@@ -5,7 +5,9 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"irazasyed/laravel-identicon": "~1.0"
+		"irazasyed/laravel-identicon": "~1.0",
+        "aws/aws-sdk-php": "2.*",
+        "fairholm/elasticquent": "master-dev"
 	},
 	"autoload": {
 		"classmap": [
@@ -33,6 +35,5 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable",
-    "fairholm/elasticquent": "master-dev"
+	"minimum-stability": "stable"
 }
