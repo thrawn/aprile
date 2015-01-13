@@ -16,6 +16,8 @@ class CreateQuotesTable extends Migration {
             {
             $table->increments('id');
             $table->string('vendor_id',20);
+            $table->string('type', 50);
+            $table->string('incoterms', 50);
             $table->string('origin',50);
             $table->string('destination',50);
             $table->decimal('buy',10,2);

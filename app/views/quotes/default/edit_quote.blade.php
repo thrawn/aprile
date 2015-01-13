@@ -17,6 +17,18 @@
                         </li>
                         <li style ="font-size: 16px;">
                             <div class="form-group">
+                                {{ Form::label('type', 'Type') }}
+                                {{ Form::text('type', null, array('class' => 'form-control')) }}
+                            </div>
+                        </li>
+                        <li style ="font-size: 16px;">
+                            <div class="form-group">
+                                {{ Form::label('incoterms', 'Incoterms') }}
+                                {{ Form::text('incoterms', null, array('class' => 'form-control')) }}
+                            </div>                                                                                                                    
+                        </li>
+                        <li style ="font-size: 16px;">
+                            <div class="form-group">
                                 {{ Form::label('origin', 'Origin') }}
                                 {{ Form::text('origin', null, array('class' => 'form-control')) }}
                             </div>

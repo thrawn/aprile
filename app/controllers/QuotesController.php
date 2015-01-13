@@ -51,6 +51,8 @@ class QuotesController extends \BaseController {
 	{
 	        $rules = array(
             'vendor_id'   => 'required|min:3|max:3', //|unique:vendors,vendor_id',
+            'type'        => 'required',
+            'incoterms'   => 'required',
             'origin'      => 'required',
             'destination' => 'required',
             'buy'         => 'required|numeric',
@@ -71,6 +73,8 @@ class QuotesController extends \BaseController {
 
             $quote = new Quotes;
             $quote->vendor_id   = Input::get('vendor_id');
+            $quote->type        = Input::get('type');
+            $quote->incoterms   = Input::get('incoterms');
             $quote->origin      = Input::get('origin');
             $quote->destination = Input::get('destination');
             $quote->buy         = Input::get('buy');
@@ -81,7 +85,7 @@ class QuotesController extends \BaseController {
             // generate quote id
             // QAPRUS-DATE-TIME
             $now = Carbon::now();
-            $quote->quote_id = 'Q-' . strtoupper(trim($quote->vendor_id)) . '-' . $now->format('Ymd-hms');
+            $quote->quote_id = 'Q-' . $now->format('Ymd-hms');
 
             //$quote->quote_id    = Input::get('quote_id');
             $quote->save();
@@ -139,6 +143,8 @@ class QuotesController extends \BaseController {
 
 	     $rules = array(
             'vendor_id'   => 'required|min:3|max:3', //|unique:vendors,vendor_id',
+            'type'        => 'required',
+            'incoterms'   => 'required',
             'origin'      => 'required',
             'destination' => 'required',
             'buy'         => 'required|numeric',
@@ -159,6 +165,8 @@ class QuotesController extends \BaseController {
 
             $quote = Quotes::find($id);
             $quote->vendor_id   = Input::get('vendor_id');
+            $quote->type        = Input::get('type');
+            $quote->incoterms   = Input::get('incoterms');
             $quote->origin      = Input::get('origin');
             $quote->destination = Input::get('destination');
             $quote->buy         = Input::get('buy');

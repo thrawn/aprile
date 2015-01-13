@@ -24,6 +24,43 @@
     </div>
 
     <div class="form-group">
+        {{ Form::label('type', 'Type') }}
+        {{ Form::select('type', array('air' => 'Air', 'ocean' => 'Ocean', 'rail' => 'Rail', 'truck' => 'Truck'),null,array('class' => 'form-control')) }}
+    </div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#inco">
+ Incoterms·
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="inco" tabindex="-1" role="dialog" aria-labelledby="inco" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="inco">Incoterms 2010</h4>                                                                                         
+      </div>
+      <div class="modal-body">
+       <img src="/img/incoterms.jpg"  width="90%" height="90%"/>·
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="form-group">
+        {{ Form::label('incoterms', 'Incoterms') }}
+        {{ Form::select('incoterms', array(
+          'sea' => array('fas'=>'FAS (Free Alongside Ship)', 'fob'=>'FOB (Free on Board)', 'cfr'=>'CFR (Cost and Freight)', 'cif'=>'CIF (Cost, Insurance, and Freight)'),
+          'all' => array('exw'=>'EXW (Ex Works)', 'fca'=>'FCA (Free Carrier)', 'cpt'=>'CPT (Carriage Paid To)', 'cip'=>'CIP (Carriage and Insurance Paid To)', 'dat'=>'DAT (Delivered at Terminal)', 'dap'=>'DAP (Delivered at Place)', 'ddp'=>'DDP (Delivered Duty Paid)')
+        ),null,array('class' => 'form-control')); }}
+    </div>
+
+    <div class="form-group">
         {{ Form::label('origin', 'Origin') }}
         {{ Form::text('origin', Input::old('origin'), array('class' => 'form-control')) }}
     </div>

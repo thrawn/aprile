@@ -46,6 +46,11 @@
 
 
                     </ul>
+                    </ul>
+                    <ul class="list-inline">
+                        <li style ="font-size: 16px;"><strong>Quote Type:</strong> {{ $quote->type }}</li>
+                        <li style ="font-size: 16px;"><strong>Incoterms:</strong> {{ $quote->incoterms }}</li>
+                    </ul>
                     <ul class="list-inline">
                         <li style ="font-size: 16px;"><strong>Origin:</strong> {{ $quote->origin }}</li>
                         <li style ="font-size: 16px;"><strong>Destination:</strong> {{ $quote->destination }}</li>
