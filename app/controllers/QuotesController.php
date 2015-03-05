@@ -90,6 +90,28 @@ class QuotesController extends \BaseController {
             //$quote->quote_id    = Input::get('quote_id');
             $quote->save();
 
+            // create email
+            $subject = " New Quote: $quote->quote_id";
+            $body = <<<RAWR
+----
+Quote for $quote->vendor_id created $quote->created_at by AprileUSA Inc.
+----
+Quote: $ $quote->sell
+----
+
+Quote Type: $quote->type
+Incoterms: $quote->incoterms                                                                                                                                                                                                 
+Origin: $quote->origin
+Destination: $quote->destination
+
+----
+Cargo:
+$quote->cargo
+
+RAWR;
+            // send email
+            email($subject,$body);
+
             // redirect
             Session::flash('message', 'Successfully created Quote');
             return Redirect::to('quotes');
@@ -175,6 +197,30 @@ class QuotesController extends \BaseController {
             $quote->note        = Input::get('note');
             $quote->created_by  = Auth::user()->username;
             $quote->save();
+
+            // send updated quote
+            $subject = "Quote: $quote->quote_id (updated)";
+
+
+            $body = <<<RAWR
+----
+Quote for $quote->vendor_id updated $quote->updated_at by AprileUSA Inc.
+----
+Quote: $ $quote->sell
+----
+
+Quote Type: $quote->type
+Incoterms: $quote->incoterms
+Origin: $quote->origin
+Destination: $quote->destination
+
+----
+Cargo:
+$quote->cargo
+
+RAWR;
+
+            email($subject,$body);
 
             // redirect
             Session::flash('message', 'Successfully created Quote');

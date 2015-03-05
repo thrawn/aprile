@@ -8,9 +8,12 @@ class CustomersController extends \BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{
-		        $customers = Customers::orderBy('id', 'DESC')->get();
-                return View::make('customers.default.index')->with('customers', $customers);
+    {
+
+       // $s3 = AWS::get('s3');
+        
+        $customers = Customers::orderBy('id', 'DESC')->get();
+        return View::make('customers.default.index')->with('customers', $customers);
 	}
 
 

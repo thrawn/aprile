@@ -7,7 +7,8 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/">AprileUSA</a>
+    <a class="navbar-brand" href="/"><img src="/img/aprile-100.png" width="200px" height="48px" style="margin:auto" /></a>
+
   </div>
 
     <ul class="nav navbar-nav">

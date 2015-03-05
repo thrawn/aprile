@@ -39,6 +39,11 @@ Route::group(array('before' => 'auth'), function()
     Route::resource('vendors','VendorsController');
     Route::resource('customers','CustomersController');
     Route::resource('inventory','InventoryController');
+    Route::resource('seaports','SeaPortsController');
     Route::get('zipcode', array('uses' => 'ZipcodeController@search'));
     Route::post('quotes/upload', array('uses' => 'QuotesController@upload'));
+    App::missing(function($exception)
+        {
+                return File::get(public_path() . '/nodestuff/app/index.html');
+        });
 });
